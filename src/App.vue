@@ -77,12 +77,16 @@ export default {
       click(idx){
         if(this.clicked != idx) {
         this.selectedColor = this.arrayOfColors[idx];
-        this.infoShow = true
+        this.infoShow = true;
+        this.clicked = idx
         } else if (this.clicked == idx) {
           this.infoShow = false
+          this.clicked = 420;
           
+        } else {
+          this.clicked = idx
         }
-        this.clicked = idx
+        
       },
       async copyText(value){
         await navigator.clipboard.writeText(value)

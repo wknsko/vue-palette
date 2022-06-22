@@ -1,0 +1,8 @@
+set -e
+npm run build
+cd dist
+git init
+git add -A
+git commit -m 'deploy'
+git checkout -b gh-pages
+git push -f git@github.com:wknsko/vue-palette.git gh-pages
